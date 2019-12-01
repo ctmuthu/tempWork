@@ -1,0 +1,25 @@
+version: '3'
+services:
+  server:
+    build: ./server
+    image: HUB_ID/cloudcomputinggroup45:latest
+    container_name: cloudcomputinggroup45
+    depends_on:
+      - "mongodb"
+    environment:
+      - MONGODB_URI=mongodb://mongodb:27017/booksData
+    ports:
+      - "3000:3000"
+    restart: always
+  mongodb:
+    image: mongo:latest
+    container_name: "mongodb"
+    environment:
+      - MONGO_DATA_DIR=/data/db
+    volumes:
+      - ./data/:/data/db
+    ports:
+        - "27017:27017"
+const mongoose = require("mongoose");
+mongoose.connect( process.env.MONGODB_URI ||
+        "mongodb://localhost:27017/booksData", { useNewUrlParser: true });

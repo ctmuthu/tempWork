@@ -1,0 +1,167 @@
+root@muthu-VirtualBox:~/tracebox# nmap -A -v www.google.com
+
+Starting Nmap 7.01 ( https://nmap.org ) at 2018-06-05 12:05 CEST
+NSE: Loaded 132 scripts for scanning.
+NSE: Script Pre-scanning.
+Initiating NSE at 12:05
+Completed NSE at 12:05, 0.00s elapsed
+Initiating NSE at 12:05
+Completed NSE at 12:05, 0.00s elapsed
+Initiating Ping Scan at 12:05
+Scanning www.google.com (216.58.198.4) [4 ports]
+Completed Ping Scan at 12:05, 0.22s elapsed (1 total hosts)
+Initiating Parallel DNS resolution of 1 host. at 12:05
+Completed Parallel DNS resolution of 1 host. at 12:05, 0.01s elapsed
+Initiating SYN Stealth Scan at 12:05
+Scanning www.google.com (216.58.198.4) [1000 ports]
+Discovered open port 443/tcp on 216.58.198.4
+Discovered open port 80/tcp on 216.58.198.4
+Completed SYN Stealth Scan at 12:06, 18.61s elapsed (1000 total ports)
+Initiating Service scan at 12:06
+Scanning 2 services on www.google.com (216.58.198.4)
+Service scan Timing: About 50.00% done; ETC: 12:07 (0:00:48 remaining)
+Completed Service scan at 12:07, 62.02s elapsed (2 services on 1 host)
+Initiating OS detection (try #1) against www.google.com (216.58.198.4)
+Retrying OS detection (try #2) against www.google.com (216.58.198.4)
+Initiating Traceroute at 12:07
+Completed Traceroute at 12:07, 0.02s elapsed
+Initiating Parallel DNS resolution of 2 hosts. at 12:07
+Completed Parallel DNS resolution of 2 hosts. at 12:07, 0.02s elapsed
+NSE: Script scanning 216.58.198.4.
+Initiating NSE at 12:07
+Completed NSE at 12:07, 3.21s elapsed
+Initiating NSE at 12:07
+Completed NSE at 12:07, 0.00s elapsed
+Nmap scan report for www.google.com (216.58.198.4)
+Host is up (0.0051s latency).
+Other addresses for www.google.com (not scanned): 2a00:1450:4002:80b::2004
+rDNS record for 216.58.198.4: mil04s03-in-f4.1e100.net
+Not shown: 998 filtered ports
+PORT    STATE SERVICE   VERSION
+80/tcp  open  http      gws
+|_http-favicon: Unknown favicon MD5: F3418A443E7D841097C714D69EC4BCB8
+| http-methods: 
+|_  Supported Methods: GET HEAD
+| http-robots.txt: 220 disallowed entries (15 shown)
+| /search /sdch /groups /index.html? /? /?hl=*& 
+|_/?hl=*&*&gws_rd=ssl /imgres /u/ /preferences /setprefs /default /m? /m/ /wml?
+|_http-server-header: gws
+|_http-title: Google
+443/tcp open  ssl/https gws
+|_http-favicon: Unknown favicon MD5: F3418A443E7D841097C714D69EC4BCB8
+| http-methods: 
+|_  Supported Methods: GET HEAD
+| http-robots.txt: 220 disallowed entries (15 shown)
+| /search /sdch /groups /index.html? /? /?hl=*& 
+|_/?hl=*&*&gws_rd=ssl /imgres /u/ /preferences /setprefs /default /m? /m/ /wml?
+|_http-server-header: gws
+|_http-title: Google
+| ssl-cert: Subject: commonName=www.google.com/organizationName=Google LLC/stateOrProvinceName=California/countryName=US
+| Issuer: commonName=Google Internet Authority G3/organizationName=Google Trust Services/countryName=US
+| Public Key type: ec
+| Public Key bits: 256
+| Signature Algorithm: sha256WithRSAEncryption
+| Not valid before: 2018-05-15T20:40:24
+| Not valid after:  2018-08-07T19:53:00
+| MD5:   e873 fd35 68a8 0e35 326c a5f3 1446 7969
+|_SHA-1: b47f 2f81 8990 734d 3b5b 48e3 56b6 0dbb f9ef 3079
+|_ssl-date: 2018-06-05T10:07:22+00:00; 0s from scanner time.
+| tls-nextprotoneg: 
+|   grpc-exp
+|   h2
+|_  http/1.1
+2 services unrecognized despite returning data. If you know the service/version, please submit the following fingerprints at https://nmap.org/cgi-bin/submit.cgi?new-service :
+==============NEXT SERVICE FINGERPRINT (SUBMIT INDIVIDUALLY)==============
+SF-Port80-TCP:V=7.01%I=7%D=6/5%Time=5B16609C%P=x86_64-pc-linux-gnu%r(GetRe
+SF:quest,3728,"HTTP/1\.0\x20200\x20OK\r\nDate:\x20Tue,\x2005\x20Jun\x20201
+SF:8\x2010:06:20\x20GMT\r\nExpires:\x20-1\r\nCache-Control:\x20private,\x2
+SF:0max-age=0\r\nContent-Type:\x20text/html;\x20charset=ISO-8859-1\r\nP3P:
+SF:\x20CP=\"This\x20is\x20not\x20a\x20P3P\x20policy!\x20See\x20g\.co/p3phe
+SF:lp\x20for\x20more\x20info\.\"\r\nServer:\x20gws\r\nX-XSS-Protection:\x2
+SF:01;\x20mode=block\r\nX-Frame-Options:\x20SAMEORIGIN\r\nSet-Cookie:\x201
+SF:P_JAR=2018-06-05-10;\x20expires=Thu,\x2005-Jul-2018\x2010:06:20\x20GMT;
+SF:\x20path=/;\x20domain=\.google\.com\r\nSet-Cookie:\x20NID=131=P-ltLprxY
+SF:Gu0WPnMPUmMUM0sRCSrVuPut94rqTAcnp_Sixj2q5SHjA2hloBiiePUcRZQIFgr0Zf_DBPa
+SF:B6nC-YeauZZTsyBFDSbiaJW9pClwoc6UJUHLleee4TFkdUCy;\x20expires=Wed,\x2005
+SF:-Dec-2018\x2010:06:20\x20GMT;\x20path=/;\x20domain=\.google\.com;\x20Ht
+SF:tpOnly\r\nAccept-Ranges:\x20none\r\nVary:\x20Accept-Encoding\r\n\r\n<!d
+SF:octype\x20html><html\x20itemscope=\"\"\x20itemtype=\"http://schema\.org
+SF:/WebPage\"\x20lang=\"de\"><head><meta\x20content=\"text/html;\x20charse
+SF:t=UTF-8\"\x20http-equiv=\"Content-Type\"><meta\x20content=\"/images/bra
+SF:nding/googleg/1x/googleg_standard_color_128dp\.png\"\x20item")%r(HTTPOp
+SF:tions,71B,"HTTP/1\.0\x20405\x20Method\x20Not\x20Allowed\r\nAllow:\x20GE
+SF:T,\x20HEAD\r\nDate:\x20Tue,\x2005\x20Jun\x202018\x2010:06:20\x20GMT\r\n
+SF:Content-Type:\x20text/html;\x20charset=UTF-8\r\nServer:\x20gws\r\nConte
+SF:nt-Length:\x201592\r\nX-XSS-Protection:\x201;\x20mode=block\r\nX-Frame-
+SF:Options:\x20SAMEORIGIN\r\n\r\n<!DOCTYPE\x20html>\n<html\x20lang=en>\n\x
+SF:20\x20<meta\x20charset=utf-8>\n\x20\x20<meta\x20name=viewport\x20conten
+SF:t=\"initial-scale=1,\x20minimum-scale=1,\x20width=device-width\">\n\x20
+SF:\x20<title>Error\x20405\x20\(Method\x20Not\x20Allowed\)!!1</title>\n\x2
+SF:0\x20<style>\n\x20\x20\x20\x20\*{margin:0;padding:0}html,code{font:15px
+SF:/22px\x20arial,sans-serif}html{background:#fff;color:#222;padding:15px}
+SF:body{margin:7%\x20auto\x200;max-width:390px;min-height:180px;padding:30
+SF:px\x200\x2015px}\*\x20>\x20body{background:url\(//www\.google\.com/imag
+SF:es/errors/robot\.png\)\x20100%\x205px\x20no-repeat;padding-right:205px}
+SF:p{margin:11px\x200\x2022px;overflow:hidden}ins{color:#777;text-decorati
+SF:on:none}a\x20img{border:0}@media\x20screen\x20and\x20\(max-width:772px\
+SF:){body{background:none;margin-top:0;max-width:none;padding");
+==============NEXT SERVICE FINGERPRINT (SUBMIT INDIVIDUALLY)==============
+SF-Port443-TCP:V=7.01%T=SSL%I=7%D=6/5%Time=5B1660A3%P=x86_64-pc-linux-gnu%
+SF:r(GetRequest,159C,"HTTP/1\.0\x20200\x20OK\r\nDate:\x20Tue,\x2005\x20Jun
+SF:\x202018\x2010:06:26\x20GMT\r\nExpires:\x20-1\r\nCache-Control:\x20priv
+SF:ate,\x20max-age=0\r\nContent-Type:\x20text/html;\x20charset=ISO-8859-1\
+SF:r\nP3P:\x20CP=\"This\x20is\x20not\x20a\x20P3P\x20policy!\x20See\x20g\.c
+SF:o/p3phelp\x20for\x20more\x20info\.\"\r\nServer:\x20gws\r\nX-XSS-Protect
+SF:ion:\x201;\x20mode=block\r\nX-Frame-Options:\x20SAMEORIGIN\r\nSet-Cooki
+SF:e:\x201P_JAR=2018-06-05-10;\x20expires=Thu,\x2005-Jul-2018\x2010:06:26\
+SF:x20GMT;\x20path=/;\x20domain=\.google\.com\r\nSet-Cookie:\x20NID=131=jp
+SF:idjXoo_DZJPSqT0YmDVq1BfaCUeukIF76920nw8qPld-aa8eGRYyTEC8tHdcvu1WD_JRguX
+SF:4-kDG7P3Wp7OWzrHtHc7CcwvM75BmwIrlhdmzBbILRI2JXeVa18biWE;\x20expires=Wed
+SF:,\x2005-Dec-2018\x2010:06:26\x20GMT;\x20path=/;\x20domain=\.google\.com
+SF:;\x20HttpOnly\r\nAlt-Svc:\x20quic=\":443\";\x20ma=2592000;\x20v=\"43,42
+SF:,41,39,35\"\r\nAccept-Ranges:\x20none\r\nVary:\x20Accept-Encoding\r\n\r
+SF:\n<!doctype\x20html><html\x20itemscope=\"\"\x20itemtype=\"http://schema
+SF:\.org/WebPage\"\x20lang=\"de\"><head><meta\x20content=\"text/html;\x20c
+SF:harset=UTF-8\"\x20http-equiv=\"Content-Type\"><meta\x20content=\"/image
+SF:s/bran")%r(HTTPOptions,751,"HTTP/1\.0\x20405\x20Method\x20Not\x20Allowe
+SF:d\r\nAllow:\x20GET,\x20HEAD\r\nDate:\x20Tue,\x2005\x20Jun\x202018\x2010
+SF::06:27\x20GMT\r\nContent-Type:\x20text/html;\x20charset=UTF-8\r\nServer
+SF::\x20gws\r\nContent-Length:\x201592\r\nX-XSS-Protection:\x201;\x20mode=
+SF:block\r\nX-Frame-Options:\x20SAMEORIGIN\r\nAlt-Svc:\x20quic=\":443\";\x
+SF:20ma=2592000;\x20v=\"43,42,41,39,35\"\r\n\r\n<!DOCTYPE\x20html>\n<html\
+SF:x20lang=en>\n\x20\x20<meta\x20charset=utf-8>\n\x20\x20<meta\x20name=vie
+SF:wport\x20content=\"initial-scale=1,\x20minimum-scale=1,\x20width=device
+SF:-width\">\n\x20\x20<title>Error\x20405\x20\(Method\x20Not\x20Allowed\)!
+SF:!1</title>\n\x20\x20<style>\n\x20\x20\x20\x20\*{margin:0;padding:0}html
+SF:,code{font:15px/22px\x20arial,sans-serif}html{background:#fff;color:#22
+SF:2;padding:15px}body{margin:7%\x20auto\x200;max-width:390px;min-height:1
+SF:80px;padding:30px\x200\x2015px}\*\x20>\x20body{background:url\(//www\.g
+SF:oogle\.com/images/errors/robot\.png\)\x20100%\x205px\x20no-repeat;paddi
+SF:ng-right:205px}p{margin:11px\x200\x2022px;overflow:hidden}ins{color:#77
+SF:7;text-decoration:none}a\x20img{border:0}@media\x20screen\x20and\x20\(m
+SF:ax-width:772px\){bo");
+Warning: OSScan results may be unreliable because we could not find at least 1 open and 1 closed port
+Device type: bridge|general purpose
+Running (JUST GUESSING): Oracle Virtualbox (98%), QEMU (90%)
+OS CPE: cpe:/o:oracle:virtualbox cpe:/o:qemu:qemu
+Aggressive OS guesses: Oracle Virtualbox (98%), QEMU user mode network gateway (90%)
+No exact OS matches for host (test conditions non-ideal).
+Network Distance: 2 hops
+TCP Sequence Prediction: Difficulty=6 (Medium)
+IP ID Sequence Generation: Incremental
+
+TRACEROUTE (using port 80/tcp)
+HOP RTT     ADDRESS
+1   0.07 ms 10.0.2.2
+2   0.10 ms mil04s03-in-f4.1e100.net (216.58.198.4)
+
+NSE: Script Post-scanning.
+Initiating NSE at 12:07
+Completed NSE at 12:07, 0.00s elapsed
+Initiating NSE at 12:07
+Completed NSE at 12:07, 0.00s elapsed
+Read data files from: /usr/bin/../share/nmap
+OS and Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+Nmap done: 1 IP address (1 host up) scanned in 91.28 seconds
+           Raw packets sent: 3113 (141.940KB) | Rcvd: 100 (4.960KB)
+root@muthu-VirtualBox:~/tracebox#

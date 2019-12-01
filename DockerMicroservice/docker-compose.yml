@@ -1,0 +1,21 @@
+version: '3'
+services:
+  server:
+    build: ./server
+    image: aditideshpande/microservice:server
+    ports:
+      - "8080:8080"
+    depends_on:
+      - hello-world-service
+      - product-descp-service
+      - product-price-service
+  hello-world-service:
+    build: ./hello-world-service
+    image: aditideshpande/microservice:hello
+  product-descp-service:
+    build: ./product-descp-service
+    image: aditideshpande/microservice:productdescp
+  product-price-service:
+    build: ./product-price-service
+    image: aditideshpande/microservice:productprice
+
